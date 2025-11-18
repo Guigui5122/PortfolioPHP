@@ -1,0 +1,289 @@
+/* --- Styles généraux pour la section héro --- */
+.hero-section {
+    /* Utilise Flexbox pour aligner le contenu (texte et image) horizontalement */
+    display: flex; 
+    /* Centre les éléments verticalement dans la section */
+    align-items: center; 
+    /* Espace entre les deux principaux éléments (texte et image) */
+    justify-content: space-around; 
+    /* Ajoute un grand espace intérieur autour du contenu (haut/bas/côtés) */
+    padding: 100px 50px; 
+    /* Définit une hauteur minimale pour qu'elle occupe un espace visible */
+    min-height: 70vh; 
+    /* Utilisation d'une couleur de fond douce (ajustez si besoin) */
+    background-color: #f4f4f9; 
+    /* Empêche le contenu de déborder sur les très petits écrans (pour la responsivité) */
+    flex-wrap: wrap; 
+    /* Ajout d'une transition pour les effets de survol ou de redimensionnement */
+    transition: all 0.3s ease;
+}
+
+/* --- Styles pour le conteneur de texte --- */
+.hero-section > div:first-child {
+    /* Assure que le texte ne prend pas toute la largeur et laisse de la place à l'image */
+    max-width: 500px;
+    /* Ajoute un peu d'espace à droite du texte */
+    margin-right: 20px;
+}
+
+/* --- Style pour le titre principal (H1) --- */
+.hero-section h1 {
+    font-size: 2.5rem; /* Taille de police importante */
+    color: #333; /* Couleur de texte sombre */
+    margin-bottom: 20px; /* Espace sous le titre */
+    /* Mettre le texte en gras */
+    font-weight: 700; 
+}
+
+/* --- Style pour le texte secondaire (CTA) --- */
+.hero-section > div > div {
+    font-size: 1.2rem; /* Taille de police lisible */
+    color: #555; /* Couleur de texte plus claire que le titre */
+    font-style: italic;
+}
+
+/* --- Style pour l'image de profil --- */
+.hero-section img {
+    /* Définit une taille maximale pour l'image (ajustez selon votre photo) */
+    max-width: 300px; 
+    /* Rendre l'image parfaitement ronde */
+    border-radius: 50%; 
+    /* S'assurer qu'elle est bien redimensionnée */
+    height: auto; 
+    /* Ajout d'une ombre douce pour la faire ressortir */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); 
+    /* Bordure subtile autour de l'image */
+    border: 5px solid #fff; 
+}
+
+/* --- Média Queries pour la Responsivité (petits écrans) --- */
+@media (max-width: 768px) {
+    .hero-section {
+        /* Les éléments s'empilent verticalement sur les petits écrans */
+        flex-direction: column; 
+        /* Réduit le padding pour économiser de l'espace */
+        padding: 50px 20px; 
+        min-height: auto; /* Permet à la section de s'adapter au contenu */
+        text-align: center; /* Centre le texte */
+    }
+    
+    .hero-section > div:first-child {
+        margin-right: 0; /* Supprime la marge de droite */
+        margin-bottom: 30px; /* Ajoute un espace sous le texte (au-dessus de l'image) */
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem; /* Réduit la taille du titre */
+    }
+    
+    .hero-section img {
+        max-width: 200px; /* Réduit la taille de l'image */
+    }
+}
+
+
+/* Style HEADER */
+/* --- Styles pour le Header principal --- */
+.main-header {
+    /* Utilise Flexbox pour un alignement horizontal parfait */
+    display: flex;
+    /* Aligne les éléments verticalement au centre */
+    align-items: center; 
+    /* Distribue l'espace : logo à gauche, nav au centre, bouton à droite */
+    justify-content: space-between; 
+    /* Ajoute de l'espace intérieur */
+    padding: 15px 50px; 
+    /* Couleur de fond du header (sombre, pour le contraste) */
+    background-color: #333333; 
+    /* Fixe le header en haut de la page lors du défilement */
+    position: sticky; 
+    top: 0;
+    /* Petite ombre pour le faire ressortir */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Assure que le header est au-dessus du reste du contenu */
+    z-index: 1000; 
+}
+
+/* --- Style du Logo/Nom --- */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff; /* Texte en blanc */
+    text-decoration: none; /* Supprime le soulignement */
+}
+
+/* --- Styles de la Navigation --- */
+.main-nav ul {
+    /* Supprime les puces par défaut */
+    list-style: none; 
+    /* Supprime les marges et paddings par défaut de la liste */
+    padding: 0;
+    margin: 0;
+    /* Aligne les liens horizontalement */
+    display: flex; 
+    gap: 30px; /* Espace entre les liens */
+}
+
+.main-nav a {
+    color: #cccccc; /* Couleur des liens (gris clair) */
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 5px 0;
+    transition: color 0.3s ease; /* Transition pour l'effet de survol */
+}
+
+.main-nav a:hover {
+    color: #00bcd4; /* Change de couleur au survol (bleu cyan) */
+}
+
+/* --- Styles du Bouton CTA --- */
+.cta-button {
+    background-color: #00bcd4; /* Couleur d'accentuation (bleu cyan) */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px; /* Coins arrondis */
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    border: none;
+}
+
+.cta-button:hover {
+    background-color: #0097a7; /* Couleur légèrement plus foncée au survol */
+    transform: translateY(-1px); /* Petit effet de soulèvement */
+}
+
+/* --- Responsivité pour les mobiles --- */
+@media (max-width: 768px) {
+    .main-header {
+        /* Empile les éléments verticalement sur les petits écrans */
+        flex-direction: column; 
+        padding: 15px 20px;
+    }
+    
+    .logo {
+        margin-bottom: 15px; /* Espace sous le logo */
+    }
+    
+    .main-nav {
+        /* Masque la navigation sur mobile pour simplifier l'en-tête */
+        display: none; 
+    }
+    
+    .cta-button {
+        margin-top: 15px;
+        width: 100%; /* Le bouton prend toute la largeur */
+        text-align: center;
+    }
+}
+
+
+/* Style du FOOTER */
+/* --- Styles pour le Footer principal --- */
+.main-footer {
+    /* Utilisation d'une couleur sombre pour le contraste (peut être ajustée) */
+    background-color: #2c3e50; 
+    color: #ecf0f1; /* Texte clair */
+    padding-top: 40px;
+    font-size: 1rem;
+    border-top: 5px solid #00bcd4; /* Ligne d'accentuation */
+}
+
+/* Conteneur principal des liens et contacts */
+.footer-content {
+    display: flex;
+    justify-content: space-around; /* Distribue l'espace entre les colonnes */
+    max-width: 1200px; /* Largeur maximale pour le contenu */
+    margin: 0 auto; /* Centre le contenu */
+    padding: 0 20px 40px; /* Padding interne */
+    flex-wrap: wrap; /* Assure que les colonnes s'empilent sur mobile */
+}
+
+/* Styles pour les titres de colonnes */
+.main-footer h3 {
+    color: #00bcd4; /* Couleur d'accentuation */
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    border-bottom: 2px solid rgba(0, 188, 212, 0.3);
+    padding-bottom: 5px;
+}
+
+/* Styles pour les listes de liens */
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links a,
+.footer-contact p {
+    color: #cccccc;
+    text-decoration: none;
+    line-height: 1.8;
+    transition: color 0.3s ease;
+    display: block; /* S'assurer que les liens prennent une ligne entière */
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+/* Styles pour les icônes sociales (utilisation de placeholders ici) */
+.social-icons a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin-right: 15px;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #00bcd4;
+}
+
+/* Styles pour la barre des droits d'auteur */
+.footer-bottom {
+    text-align: center;
+    padding: 15px 20px;
+    background-color: #1e2b38; /* Couleur plus foncée pour la barre inférieure */
+    border-top: 1px solid #34495e;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #bdc3c7;
+}
+
+/* --- Responsivité pour les mobiles --- */
+@media (max-width: 768px) {
+    .footer-content {
+        /* Les colonnes s'empilent */
+        flex-direction: column;
+        padding: 0 30px 30px;
+    }
+    
+    .footer-links,
+    .footer-contact {
+        /* Ajoute un espacement entre les sections empilées */
+        margin-bottom: 30px; 
+    }
+    
+    .footer-links h3,
+    .footer-contact h3 {
+        text-align: center; /* Centre les titres */
+    }
+    
+    /* Centre le texte dans les colonnes sur mobile */
+    .footer-contact p,
+    .footer-links ul {
+        text-align: center;
+    }
+    
+    /* Centre les icônes sociales */
+    .social-icons {
+        text-align: center;
+        margin-top: 15px;
+    }
+}
