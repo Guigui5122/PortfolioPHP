@@ -11,7 +11,7 @@
     /* Définit une hauteur minimale pour qu'elle occupe un espace visible */
     min-height: 70vh; 
     /* Utilisation d'une couleur de fond douce (ajustez si besoin) */
-    background-color: #f4f4f9; 
+    background-color: #6296f7; 
     /* Empêche le contenu de déborder sur les très petits écrans (pour la responsivité) */
     flex-wrap: wrap; 
     /* Ajout d'une transition pour les effets de survol ou de redimensionnement */
@@ -286,4 +286,77 @@
         text-align: center;
         margin-top: 15px;
     }
+}
+
+
+section.projects .list-projects {
+    display: flex;
+}
+section.projects .list-projects .project{
+    background-color: rgb(233, 226, 190);
+    padding: 30px;
+}
+
+.project {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 320px;
+    width: 100%;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Titre */
+.project h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Description */
+.project .description {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Liens */
+.project a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Lien GitHub */
+.project a:first-of-type {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.project a:first-of-type:hover {
+    background: #e0e0e0;
+}
+
+/* Lien Voir */
+.project a:last-of-type {
+    background: #4a76f7;
+    color: #fff;
+}
+
+.project a:last-of-type:hover {
+    background: #335eea;
 }

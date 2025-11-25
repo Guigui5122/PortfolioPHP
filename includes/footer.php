@@ -3,9 +3,9 @@
         <div class="footer-links">
             <h3>Navigation Rapide</h3>
             <ul>
-                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="/index.php">Accueil</a></li>
                 <li><a href="#projets">Projets</a></li>
-                <li><a href="#projets">Blog</a></li>
+                <li><a href="/blog.php">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#mentions">Mentions Légales</a></li>
             </ul>
