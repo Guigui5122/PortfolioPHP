@@ -1,32 +1,25 @@
-<footer class="main-footer">
+<footer class="site-footer">
     <div class="footer-content">
+        <div class="footer-about">
+            <h3>GP DEV</h3>
+            <p>Faites de vos idées des projets, et de l'argent…</p>
+        </div>
         <div class="footer-links">
-            <h3>Navigation Rapide</h3>
+            <h4>Liens utiles</h4>
             <ul>
-                <li><a href="/index.php">Accueil</a></li>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="/blog.php">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#mentions">Mentions Légales</a></li>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">À propos</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </div>
-        
         <div class="footer-contact">
-            <h3>Me Contacter</h3>
-            <p>Email : guillaume.pelloin@email.com</p>
-            <p>Téléphone : +33 6 00 00 00 00</p>
-            <div class="social-icons">
-                <a href="#" target="_blank" aria-label="LinkedIn">
-                    <span class="icon-linkedin">in</span>
-                </a>
-                <a href="#" target="_blank" aria-label="GitHub">
-                    <span class="icon-github">gh</span>
-                </a>
-            </div>
+            <h4>Contact</h4>
+            <p>Email : contact@monlogo.com</p>
+            <p>Téléphone : +33 6 12 34 56 78</p>
         </div>
     </div>
-    
     <div class="footer-bottom">
-        <p>&copy; 2025 GP DEV Guillaume Pelloin. Tous droits réservés.</p>
+        &copy; GP DEV 2025 Tous droits réservés.
     </div>
 </footer>

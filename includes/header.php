@@ -1,13 +1,16 @@
-<header class="main-header">
-    <a href="#" class="logo">GP DEV</a>
-    
+<header class="site-header">
+    <div class="logo">
+        <a href="#">GP DEV</a>
+    </div>
     <nav class="main-nav">
         <ul>
-            <li><a href="#projets">Projets</a></li>
-            <li><a href="#expertise">Compétences</a></li>
-            <li><a href="/blog.php">Blog</a></li>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">À propos</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
         </ul>
     </nav>
-    
-    <a href="#contact" class="cta-button">Contactez-moi</a>
+    <div class="cta">
+        <a href="#" class="btn-primary">Se connecter</a>
+    </div>
 </header>

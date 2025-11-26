@@ -1,362 +1,504 @@
-/* --- Styles généraux pour la section héro --- */
-.hero-section {
-    /* Utilise Flexbox pour aligner le contenu (texte et image) horizontalement */
-    display: flex; 
-    /* Centre les éléments verticalement dans la section */
-    align-items: center; 
-    /* Espace entre les deux principaux éléments (texte et image) */
-    justify-content: space-around; 
-    /* Ajoute un grand espace intérieur autour du contenu (haut/bas/côtés) */
-    padding: 100px 50px; 
-    /* Définit une hauteur minimale pour qu'elle occupe un espace visible */
-    min-height: 70vh; 
-    /* Utilisation d'une couleur de fond douce (ajustez si besoin) */
-    background-color: #6296f7; 
-    /* Empêche le contenu de déborder sur les très petits écrans (pour la responsivité) */
-    flex-wrap: wrap; 
-    /* Ajout d'une transition pour les effets de survol ou de redimensionnement */
-    transition: all 0.3s ease;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap');
+
+:root {
+    /* Colors */
+    --primary-color: #4F46E5; /* Indigo 600 */
+    --primary-hover: #4338CA; /* Indigo 700 */
+    --secondary-color: #1F2937; /* Gray 800 */
+    --background-color: #F9FAFB; /* Gray 50 */
+    --surface-color: #FFFFFF;
+    --text-color: #111827; /* Gray 900 */
+    --text-muted: #6B7280; /* Gray 500 */
+    --accent-color: #F59E0B; /* Amber 500 */
+    --border-color: #E5E7EB; /* Gray 200 */
+
+    /* Typography */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 8rem;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+    /* Border Radius */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 1rem;
+    --radius-full: 9999px;
 }
 
-/* --- Styles pour le conteneur de texte --- */
-.hero-section > div:first-child {
-    /* Assure que le texte ne prend pas toute la largeur et laisse de la place à l'image */
-    max-width: 500px;
-    /* Ajoute un peu d'espace à droite du texte */
-    margin-right: 20px;
-}
-
-/* --- Style pour le titre principal (H1) --- */
-.hero-section h1 {
-    font-size: 2.5rem; /* Taille de police importante */
-    color: #333; /* Couleur de texte sombre */
-    margin-bottom: 20px; /* Espace sous le titre */
-    /* Mettre le texte en gras */
-    font-weight: 700; 
-}
-
-/* --- Style pour le texte secondaire (CTA) --- */
-.hero-section > div > div {
-    font-size: 1.2rem; /* Taille de police lisible */
-    color: #555; /* Couleur de texte plus claire que le titre */
-    font-style: italic;
-}
-
-/* --- Style pour l'image de profil --- */
-.hero-section img {
-    /* Définit une taille maximale pour l'image (ajustez selon votre photo) */
-    max-width: 300px; 
-    /* Rendre l'image parfaitement ronde */
-    border-radius: 50%; 
-    /* S'assurer qu'elle est bien redimensionnée */
-    height: auto; 
-    /* Ajout d'une ombre douce pour la faire ressortir */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); 
-    /* Bordure subtile autour de l'image */
-    border: 5px solid #fff; 
-}
-
-/* --- Média Queries pour la Responsivité (petits écrans) --- */
-@media (max-width: 768px) {
-    .hero-section {
-        /* Les éléments s'empilent verticalement sur les petits écrans */
-        flex-direction: column; 
-        /* Réduit le padding pour économiser de l'espace */
-        padding: 50px 20px; 
-        min-height: auto; /* Permet à la section de s'adapter au contenu */
-        text-align: center; /* Centre le texte */
-    }
-    
-    .hero-section > div:first-child {
-        margin-right: 0; /* Supprime la marge de droite */
-        margin-bottom: 30px; /* Ajoute un espace sous le texte (au-dessus de l'image) */
-    }
-    
-    .hero-section h1 {
-        font-size: 2rem; /* Réduit la taille du titre */
-    }
-    
-    .hero-section img {
-        max-width: 200px; /* Réduit la taille de l'image */
-    }
-}
-
-
-/* Style HEADER */
-/* --- Styles pour le Header principal --- */
-.main-header {
-    /* Utilise Flexbox pour un alignement horizontal parfait */
-    display: flex;
-    /* Aligne les éléments verticalement au centre */
-    align-items: center; 
-    /* Distribue l'espace : logo à gauche, nav au centre, bouton à droite */
-    justify-content: space-between; 
-    /* Ajoute de l'espace intérieur */
-    padding: 15px 50px; 
-    /* Couleur de fond du header (sombre, pour le contraste) */
-    background-color: #333333; 
-    /* Fixe le header en haut de la page lors du défilement */
-    position: sticky; 
-    top: 0;
-    /* Petite ombre pour le faire ressortir */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    /* Assure que le header est au-dessus du reste du contenu */
-    z-index: 1000; 
-}
-
-/* --- Style du Logo/Nom --- */
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #ffffff; /* Texte en blanc */
-    text-decoration: none; /* Supprime le soulignement */
-}
-
-/* --- Styles de la Navigation --- */
-.main-nav ul {
-    /* Supprime les puces par défaut */
-    list-style: none; 
-    /* Supprime les marges et paddings par défaut de la liste */
-    padding: 0;
+/* Modern Reset */
+*, *::before, *::after {
     margin: 0;
-    /* Aligne les liens horizontalement */
-    display: flex; 
-    gap: 30px; /* Espace entre les liens */
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--secondary-color);
+    line-height: 1.2;
+    margin-bottom: var(--spacing-sm);
+}
+
+p {
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-muted);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button, .btn {
+    cursor: pointer;
+    font-family: var(--font-body);
+}
+
+/* Utility Classes */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: var(--spacing-xs) auto 0;
+    border-radius: var(--radius-full);
+}
+
+/* Buttons */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--surface-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    border: none;
+    box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Header */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.site-header .logo a {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: -0.5px;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
 }
 
 .main-nav a {
-    color: #cccccc; /* Couleur des liens (gris clair) */
-    text-decoration: none;
-    font-size: 1rem;
-    padding: 5px 0;
-    transition: color 0.3s ease; /* Transition pour l'effet de survol */
+    font-weight: 500;
+    color: var(--text-color);
+    font-size: 0.95rem;
 }
 
 .main-nav a:hover {
-    color: #00bcd4; /* Change de couleur au survol (bleu cyan) */
+    color: var(--primary-color);
 }
 
-/* --- Styles du Bouton CTA --- */
-.cta-button {
-    background-color: #00bcd4; /* Couleur d'accentuation (bleu cyan) */
-    color: #ffffff;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px; /* Coins arrondis */
-    font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.1s ease;
-    border: none;
-}
-
-.cta-button:hover {
-    background-color: #0097a7; /* Couleur légèrement plus foncée au survol */
-    transform: translateY(-1px); /* Petit effet de soulèvement */
-}
-
-/* --- Responsivité pour les mobiles --- */
-@media (max-width: 768px) {
-    .main-header {
-        /* Empile les éléments verticalement sur les petits écrans */
-        flex-direction: column; 
-        padding: 15px 20px;
-    }
-    
-    .logo {
-        margin-bottom: 15px; /* Espace sous le logo */
-    }
-    
-    .main-nav {
-        /* Masque la navigation sur mobile pour simplifier l'en-tête */
-        display: none; 
-    }
-    
-    .cta-button {
-        margin-top: 15px;
-        width: 100%; /* Le bouton prend toute la largeur */
-        text-align: center;
-    }
-}
-
-
-/* Style du FOOTER */
-/* --- Styles pour le Footer principal --- */
-.main-footer {
-    /* Utilisation d'une couleur sombre pour le contraste (peut être ajustée) */
-    background-color: #2c3e50; 
-    color: #ecf0f1; /* Texte clair */
-    padding-top: 40px;
-    font-size: 1rem;
-    border-top: 5px solid #00bcd4; /* Ligne d'accentuation */
-}
-
-/* Conteneur principal des liens et contacts */
-.footer-content {
-    display: flex;
-    justify-content: space-around; /* Distribue l'espace entre les colonnes */
-    max-width: 1200px; /* Largeur maximale pour le contenu */
-    margin: 0 auto; /* Centre le contenu */
-    padding: 0 20px 40px; /* Padding interne */
-    flex-wrap: wrap; /* Assure que les colonnes s'empilent sur mobile */
-}
-
-/* Styles pour les titres de colonnes */
-.main-footer h3 {
-    color: #00bcd4; /* Couleur d'accentuation */
-    margin-bottom: 20px;
-    font-size: 1.2rem;
-    border-bottom: 2px solid rgba(0, 188, 212, 0.3);
-    padding-bottom: 5px;
-}
-
-/* Styles pour les listes de liens */
-.footer-links ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-links a,
-.footer-contact p {
-    color: #cccccc;
-    text-decoration: none;
-    line-height: 1.8;
-    transition: color 0.3s ease;
-    display: block; /* S'assurer que les liens prennent une ligne entière */
-}
-
-.footer-links a:hover {
-    color: #ffffff;
-}
-
-/* Styles pour les icônes sociales (utilisation de placeholders ici) */
-.social-icons a {
-    color: #ecf0f1;
-    text-decoration: none;
-    font-size: 1.5rem;
-    margin-right: 15px;
-    display: inline-block;
-    transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-    color: #00bcd4;
-}
-
-/* Styles pour la barre des droits d'auteur */
-.footer-bottom {
-    text-align: center;
-    padding: 15px 20px;
-    background-color: #1e2b38; /* Couleur plus foncée pour la barre inférieure */
-    border-top: 1px solid #34495e;
-}
-
-.footer-bottom p {
-    margin: 0;
+.cta .btn-primary {
+    padding: 0.5rem 1.25rem;
     font-size: 0.9rem;
-    color: #bdc3c7;
 }
 
-/* --- Responsivité pour les mobiles --- */
-@media (max-width: 768px) {
-    .footer-content {
-        /* Les colonnes s'empilent */
-        flex-direction: column;
-        padding: 0 30px 30px;
-    }
-    
-    .footer-links,
-    .footer-contact {
-        /* Ajoute un espacement entre les sections empilées */
-        margin-bottom: 30px; 
-    }
-    
-    .footer-links h3,
-    .footer-contact h3 {
-        text-align: center; /* Centre les titres */
-    }
-    
-    /* Centre le texte dans les colonnes sur mobile */
-    .footer-contact p,
-    .footer-links ul {
-        text-align: center;
-    }
-    
-    /* Centre les icônes sociales */
-    .social-icons {
-        text-align: center;
-        margin-top: 15px;
-    }
-}
-
-
-section.projects .list-projects {
+/* Hero Section */
+.hero-section {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-xl);
+    padding: var(--spacing-xl) var(--spacing-md);
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 80vh;
 }
-section.projects .list-projects .project{
-    background-color: rgb(233, 226, 190);
-    padding: 30px;
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.1;
+}
+
+.hero-content div {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-md);
+    max-width: 500px;
+}
+
+.hero-section img {
+    flex: 1;
+    max-width: 450px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    animation: float 6s ease-in-out infinite;
+    object-fit: cover;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Projects Section */
+.projects {
+    padding: var(--spacing-xl) var(--spacing-md);
+    background-color: var(--surface-color);
+}
+
+.projects h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    font-family: var(--font-heading);
+}
+
+.list-projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .project {
-    background: #fff;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    background: var(--background-color);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    max-width: 320px;
-    width: 100%;
 }
 
 .project:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-lg);
 }
 
-/* Titre */
 .project h3 {
-    margin: 0;
-    font-size: 1.4rem;
-    color: #333;
-    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-color);
 }
 
-/* Description */
 .project .description {
-    color: #666;
-    font-size: 0.95rem;
-    line-height: 1.4;
+    flex-grow: 1;
+    margin-bottom: var(--spacing-md);
+    font-size: 1rem;
+    color: var(--text-muted);
 }
 
-/* Liens */
-.project a {
-    display: inline-block;
-    text-decoration: none;
-    padding: 8px 14px;
-    border-radius: 6px;
+.project .links {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: auto;
+}
+
+.btn-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
     font-size: 0.9rem;
-    font-weight: 500;
-    transition: background 0.2s ease, color 0.2s ease;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
 }
 
-/* Lien GitHub */
-.project a:first-of-type {
-    background: #f0f0f0;
+.btn-link i {
+    transition: transform 0.3s ease;
+}
+
+.btn-link:hover {
+    transform: translateY(-2px);
+}
+
+.btn-link:hover i {
+    transform: rotate(15deg) scale(1.1);
+}
+
+.btn-link.github {
+    background-color: #24292e;
+    color: #ffffff;
+}
+
+.btn-link.github:hover {
+    background-color: #000000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.btn-link.project-url {
+    background-color: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-link.project-url:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+/* Skills & References (Basic Layout) */
+.skills, .references {
+    padding: var(--spacing-lg) var(--spacing-md);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Footer */
+.site-footer {
+    background-color: var(--secondary-color);
+    color: var(--surface-color);
+    padding: var(--spacing-xl) var(--spacing-md) var(--spacing-md);
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content div {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-about h3, .footer-links h4, .footer-contact h4 {
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.25rem;
+}
+
+.footer-links ul li {
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer-links a {
+    color: #D1D5DB; /* Gray 300 */
+}
+
+.footer-links a:hover {
+    color: var(--accent-color);
+}
+
+.footer-contact p {
+    margin-bottom: var(--spacing-xs);
+    color: #D1D5DB;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #9CA3AF; /* Gray 400 */
+    font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    .hero-section {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: var(--spacing-lg) var(--spacing-sm);
+        justify-content: center;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content div {
+        margin: 0 auto var(--spacing-md);
+    }
+
+    .hero-section img {
+        max-width: 80%;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .site-header {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+    
+    .main-nav {
+        display: none; /* Placeholder for mobile menu */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+    }
+}
+
+
+/* CSS Skills */
+
+/* Style du conteneur principal */
+.list-skills {
+    /* Utilise Flexbox pour un alignement horizontal */
+    display: flex;
+    /* Permet le retour à la ligne si l'espace est insuffisant */
+    flex-wrap: wrap;
+    /* Centre les cartes dans le conteneur */
+    justify-content: center;
+    /* Ajoute un peu d'espace autour des cartes */
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* Style de chaque carte de compétence */
+.skill {
+    /* Définit une taille minimale pour les cartes */
+    min-width: 160px;
+    /* Définit une taille maximale pour éviter des cartes trop larges */
+    max-width: 200px;
+    /* La carte doit s'adapter à son contenu dans l'alignement Flex */
+    flex: 1 1 auto;
+    /* Style visuel de la carte */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    /* Ajout d'une transition pour les effets d'interaction */
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #fff; /* Fond clair pour les cartes */
+}
+
+/* Effet au survol pour rendre la carte interactive */
+.skill:hover {
+    transform: translateY(-5px); /* Légère élévation */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style pour le conteneur d'image */
+.skill .img {
+    margin: 0;
+    padding: 0;
+    /* Utilise Flexbox pour centrer l'image si elle n'est pas déjà centrée */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px; /* Hauteur fixe pour le conteneur d'image */
+}
+
+/* Style de l'image de logo */
+.skill img {
+    /* Assure que l'image ne dépasse pas la taille du conteneur */
+    max-width: 100%;
+    max-height: 100%;
+    /* Rend l'image en cercle, optionnel mais peut être stylé */
+    /* border-radius: 50%; */ 
+    height: auto;
+    object-fit: contain; /* S'assure que tout le logo est visible */
+}
+
+/* Style pour le nom de compétence (si le logo est absent) */
+.skill h3 {
+    margin: 0;
+    font-size: 1.1em;
     color: #333;
-}
-
-.project a:first-of-type:hover {
-    background: #e0e0e0;
-}
-
-/* Lien Voir */
-.project a:last-of-type {
-    background: #4a76f7;
-    color: #fff;
-}
-
-.project a:last-of-type:hover {
-    background: #335eea;
+    line-height: 1.2;
+    /* S'assure que le texte prend de la place similaire à un logo */
+    min-height: 60px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
