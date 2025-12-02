@@ -1,4 +1,15 @@
-<?php require_once 'db/functions.php'; ?>
+<?php
+
+require_once 'db/functions.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // <!-- Cas où le formulaire a été rempli et soumis -->
+    // <!-- Cas où le formulaire (suppression) a été rempli et soumis -->
+    $idProjectToDelete = $_POST["idProjectToDelete"];
+    $success = deleteProject($idProjectToDelete);
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,11 +33,28 @@
             <img src="/img/GP_photo.jpg" alt="Photo de profil Guillaume">
         </section>
         <section class="projects">
+            <?php
+            if (isset($success)):
+                if ($success): ?>
+                    <div class="alert success">
+                        Le projet a bien été supprimé
+                    </div>
+                <?php
+                else: ?>
+                    <div class="alert error">
+                        Une erreur est survenue
+                    </div>
+            <?php
+                endif;
+            endif; ?>
+
             <h2>Mes projets</h2>
             <div class="list-projects">
                 <?php
-                $project = getAllProjects();
-                foreach ($project as $row) :?>
+                $projects = getAllProjects();
+                foreach ($projects as $row) : ?>
+
+
 
                     <article class="project">
                         <!-- Images -->
@@ -37,38 +65,51 @@
                         <p class="description">
                             <?php echoValue($row, 'description'); ?>
                         </p>
+                        <div class="project-skills">
+                            <?php foreach($row['skills'] as $skill): ?>
+                                <div><?php echo $skill; ?></div>
+                            <?php endforeach ?>
+                        </div>
                         <div class="links">
                             <!-- Lien Github -->
                             <a href="<?php echoValue($row, 'gh_link'); ?>" class="btn-link github" target="_blank"><i class="fab fa-github"></i> Github</a>
                             <!-- Lien Projet -->
                             <a href="<?php echoValue($row, 'link_project'); ?>" class="btn-link project-url" target="_blank"><i class="fas fa-external-link-alt"></i> Voir</a>
                         </div>
+                        <form action="" method="POST">
+                            <div class="deletedBtnform">
+                                <input type="hidden" name="idProjectToDelete" value="<?php echoValue($row, 'idprojects'); ?>" />
+                                <input type="submit" value="Delete" class="btn-delete">
+                            </div>
+                        </form>
                         <!-- Techos -->
                     </article>
                 <?php endforeach; ?>
             </div>
         </section>
         <section class="skills">
-                        <h2> Hard Skills </h2>
+            <h2> Hard Skills </h2>
 
             <div class="list-skills">
                 <?php
                 $skills = getAllSkills();
-                foreach ($skills as $skill) :?>
+                foreach ($skills as $skill) : ?>
                     <article class="skill">
                         <?php if ($skill['logo'] == null): ?>
                             <h3>
-                                <?php echoValue($skill,'name'); ?>
+                                <?php echoValue($skill, 'name'); ?>
                             </h3>
                         <?php else : ?>
-                            <p class="img">
-                                <img src="<?php echoValue($skill, 'logo'); ?>" />
-                            </p>
+                                <p class="img">
+                                    <img 
+                                    alt="<?php echoValue($skill, 'name'); ?>"
+                                    src="<?php echoValue($skill, 'logo'); ?>"/>
+                                </p>
                         <?php
                         endif;
                         ?>
                     </article>
-                    <?php endforeach ?>
+                <?php endforeach ?>
             </div>
         </section>
         <section class="references">
