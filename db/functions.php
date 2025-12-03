@@ -57,8 +57,8 @@ function echoValue($row, $name)
     echo htmlspecialchars($row[$name], ENT_QUOTES, 'UTF-8') . "\t";
 }
 
-
- function insertProject($title, $description, $gh_link, $link_project){
+ function insertProject($title, $description, $gh_link, $link_project)
+ {
         $pdo = getDBConnection();
         $statement = $pdo->prepare('INSERT INTO projects (title, description, gh_link, link_project)
             VALUES (:title, :description, :gh_link, :link_project)');
@@ -73,7 +73,9 @@ function echoValue($row, $name)
         return $success;
     }
 
-     function deleteProject($idProjectToDelete){
+    
+function deleteProject($idProjectToDelete)
+{
         $pdo = getDBConnection();
         $statement = $pdo->prepare('DELETE FROM projects 
                     WHERE projects.idprojects = :idProjectToDelete');

@@ -17,5 +17,8 @@
     refactoring index.php (alléger le code en doublon) -> création du fichier : db/functions.php
 
 **Live 4/8 (TBDC - Studi)** 
-**Live 8/8 (TBDC - Studi)**
+**Live 5/8 (TBDC - Studi)**
+-> ajout "createproject.php" + gestion de l'affcihage sur index.php (page d'accueil)
+**Live 6/8 (TBDC - Studi)**
 
+-> ajout utils/session.php pour gérer la connexion utilisateur 

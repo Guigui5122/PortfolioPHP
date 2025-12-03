@@ -1,6 +1,7 @@
 <?php
 
 require_once 'db/functions.php';
+require_once 'utils/session.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // <!-- Cas où le formulaire a été rempli et soumis -->
@@ -32,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <img src="/img/GP_photo.jpg" alt="Photo de profil Guillaume">
         </section>
-        <section class="projects">
+        <section class="projects" id="projects">
             <?php
             if (isset($success)):
                 if ($success): ?>
@@ -54,11 +55,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $projects = getAllProjects();
                 foreach ($projects as $row) : ?>
 
-
-
+                    <!-- Ici les projets s'ajoute lorsque l'on créer un nouveau projet via Createproject.php -->
                     <article class="project">
-                        <!-- Images -->
-                        <!-- Titre -->
                         <h3>
                             <?php echoValue($row, 'title'); ?>
                         </h3>
@@ -66,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <?php echoValue($row, 'description'); ?>
                         </p>
                         <div class="project-skills">
-                            <?php foreach($row['skills'] as $skill): ?>
+                            <?php foreach ($row['skills'] as $skill): ?>
                                 <div><?php echo $skill; ?></div>
                             <?php endforeach ?>
                         </div>
@@ -76,18 +74,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <!-- Lien Projet -->
                             <a href="<?php echoValue($row, 'link_project'); ?>" class="btn-link project-url" target="_blank"><i class="fas fa-external-link-alt"></i> Voir</a>
                         </div>
-                        <form action="" method="POST">
+                            <?php if (isLoggedIn()): ?>
                             <div class="deletedBtnform">
                                 <input type="hidden" name="idProjectToDelete" value="<?php echoValue($row, 'idprojects'); ?>" />
                                 <input type="submit" value="Delete" class="btn-delete">
+                            <?php endif; ?>
                             </div>
-                        </form>
-                        <!-- Techos -->
+                            </form>
                     </article>
                 <?php endforeach; ?>
             </div>
         </section>
-        <section class="skills">
+        <section class="skills" id="skills">
             <h2> Hard Skills </h2>
 
             <div class="list-skills">
@@ -100,11 +98,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <?php echoValue($skill, 'name'); ?>
                             </h3>
                         <?php else : ?>
-                                <p class="img">
-                                    <img 
+                            <p class="img">
+                                <img
                                     alt="<?php echoValue($skill, 'name'); ?>"
-                                    src="<?php echoValue($skill, 'logo'); ?>"/>
-                                </p>
+                                    src="<?php echoValue($skill, 'logo'); ?>" />
+                            </p>
                         <?php
                         endif;
                         ?>
