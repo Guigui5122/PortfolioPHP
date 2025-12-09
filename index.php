@@ -75,6 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <a href="<?php echoValue($row, 'link_project'); ?>" class="btn-link project-url" target="_blank"><i class="fas fa-external-link-alt"></i> Voir</a>
                         </div>
                             <?php if (isLoggedIn()): ?>
+                            <form action="" method="POST">
                             <div class="deletedBtnform">
                                 <input type="hidden" name="idProjectToDelete" value="<?php echoValue($row, 'idprojects'); ?>" />
                                 <input type="submit" value="Delete" class="btn-delete">
