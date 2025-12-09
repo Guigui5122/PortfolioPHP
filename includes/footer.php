@@ -23,3 +23,6 @@
         &copy; GP DEV 2025 Tous droits réservés.
     </div>
 </footer>
+</body>
+
+</html>
