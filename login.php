@@ -5,13 +5,15 @@ require_once 'db/functions.php';
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // <!-- Cas où le formulaire a été rempli et soumis -->
-        $username = $_POST["username"];
+        $email = $_POST["email"];
         $password = $_POST["password"];
 
-        //Simuler une connexion sans passer par la base de données
+        //récupérer l'utilisateur avec cet email
 
-        if($username == "Guigui" and $password == "Aby2025"){
-            $_SESSION['idUser'] = "Guigui";
+        $user = getUserByEmail($email);
+
+        if($user && password_verify($password, $user['password'])){
+            $_SESSION['idUser'] = $user['idUser'];
             header('Location: index.php');
         }
         else{
@@ -42,8 +44,8 @@ require_once 'db/functions.php';
                 <h1>Me Connecter</h1>
                 <form action="" method="POST">
                     <div class="form-group">
-                        <label for="username">Nom d'utilisateur</label>
-                        <input type="text" name="username" id="username" placeholder="Nom d'utilisateur" required>
+                        <label for="email">Votre e-mail</label>
+                        <input type="email" name="email" id="email" placeholder="jean@mail.com" required>
                     </div>
                     
                     <div class="form-group">
