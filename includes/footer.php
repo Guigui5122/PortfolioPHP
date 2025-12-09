@@ -8,8 +8,8 @@
             <h4>Liens utiles</h4>
             <ul>
                 <li><a href="/index.php#"">Accueil</a></li>
-                <li><a href="/index.php#projects"">Mes projets</a></li>
-                <li><a href="/index.php#skills"Skills</a></li>
+                <li><a href=" /index.php#projects"">Mes projets</a></li>
+                <li><a href="/index.php#skills" Skills</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </div>
