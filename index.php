@@ -78,9 +78,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <div class="deletedBtnform">
                                 <input type="hidden" name="idProjectToDelete" value="<?php echoValue($row, 'idprojects'); ?>" />
                                 <input type="submit" value="Delete" class="btn-delete">
-                            <?php endif; ?>
                             </div>
                             </form>
+                            <?php endif; ?>
                     </article>
                 <?php endforeach; ?>
             </div>
