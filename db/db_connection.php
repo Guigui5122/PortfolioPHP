@@ -2,15 +2,17 @@
 
 function getDBConnection()
 {
-    try{
-        $user ="root";
-        $password = "";
+    $config = require 'config.php';
+    try {
+        $user = $config['DB_USER'];
+        $pass = $config['DB_PASS'];
+        $host = $config['DB_HOST'];
+        $dbname = $config['DB_NAME'];
 
-        $pdo = new PDO('mysql:host=localhost;dbname=portfoliobdd', $user, $password); 
+        $pdo = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
         return $pdo;
-    }catch(PDOException $e)
-    {
+    } catch (PDOException $e) {
+        echo $e;
         die("Erreur lors de la connexion à la BDD");
     }
-
 }
